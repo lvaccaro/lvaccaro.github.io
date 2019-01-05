@@ -1,20 +1,27 @@
 <html>
 <head>
 	<title>Luca Vaccaro</title>
+	<link rel = "stylesheet" type = "text/css" href = "style.css" />
 </head>
 <body>
-	<footer class="footer">
+	<section>
 		<div class="container">
-			<a href="/" class="footer-logo"></a>
+			<pre>
+			Luca Vaccaro<br>
+			GPG: a36735b750107c1893ef36abfba046ea74b001c1
+			Ots proof available at <a id="link" href="/"></a>
+			Github page repository at <a href="https://github.com/lvaccaro/lvaccaro.github.io">https://github.com/lvaccaro/lvaccaro.github.io</a>
+			</pre>
 		</div>
-	</footer>
-	<script src="https://opentimestamps.org/assets/javascripts/application.js"></script>
+	</section>
+	<hr>
+	<section class="container">
+		<pre id="text">
+		</pre>
+	</section>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://opentimestamps.org/assets/javascripts/vendor/opentimestamps.min.js"></script>
-	<script>
-		const link = 'https://lvaccaro.github.io/ots/id.ots'
-		$.get(link).then(function(data) {
-			console.log(data)
-		})
-	</script>
+	<script src="./bitcore-lib.js"></script>
+	<script src="./app.js"></script>
 </body>
 </html>
