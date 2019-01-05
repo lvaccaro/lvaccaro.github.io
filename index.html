@@ -3,6 +3,18 @@
 	<title>Luca Vaccaro</title>
 </head>
 <body>
-	<h2>Luca Vaccaro</h2>
+	<footer class="footer">
+		<div class="container">
+			<a href="/" class="footer-logo"></a>
+		</div>
+	</footer>
+	<script src="https://opentimestamps.org/assets/javascripts/application.js"></script>
+	<script src="https://opentimestamps.org/assets/javascripts/vendor/opentimestamps.min.js"></script>
+	<script>
+		const link = 'https://lvaccaro.github.io/ots/id.ots'
+		$.get(link).then(function(data) {
+			console.log(data)
+		})
+	</script>
 </body>
 </html>
