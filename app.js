@@ -14,15 +14,25 @@ async function app() {
 	$("#link").html(link)
 
 	const ots = await get(link)
-	try{
+	try {
 		const ctx = new OpenTimestamps.Context.StreamDeserialization(Array.from(ots))
 		const detached = OpenTimestamps.DetachedTimestampFile.deserialize(ctx);
 		const output = detached.timestamp.strTreeAscii(0 , true)
 		const root = "From GPG: " + '<b class="cyan">' + Utils.bytesToHex(detached.timestamp.msg) + '</b>' + '\n'
 		$("#text").html(root)
 		$("#text").append(output)
+		const results = await OpenTimestamps.verifyTimestamp(detached.timestamp)
+		if(Object.keys(results).length === 0){
+			$("#verify").html("Pending attestation");
+		}else{
+			Object.keys(results).map(chain => {
+				var date = moment(results[chain].timestamp * 1000).tz(moment.tz.guess()).format('YYYY-MM-DD z');
+				$("#verify").html( chain + ' block ' + results[chain].height + ' attests existence as of ' + date + "\n");
+			})
+		}
 	} catch (e) {
 		console.log(e)
+		$("#verify").html(e.message)
 	}
 }
 
