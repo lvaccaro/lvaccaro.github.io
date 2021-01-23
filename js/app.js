@@ -5,7 +5,6 @@ this.window.DetachedTimestampFile = OpenTimestamps.DetachedTimestampFile
 this.window.Ops = OpenTimestamps.Ops
 this.window.Notary = OpenTimestamps.Notary
 this.window.Utils = OpenTimestamps.Utils
-const bitcore = require('bitcore-lib')
 
 app()
 async function app() {

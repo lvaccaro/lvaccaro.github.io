@@ -1,0 +1,15 @@
+{
+  "name": "bitcore-lib",
+  "homepage": "https://github.com/bitpay/bitcore-lib",
+  "version": "0.16.0",
+  "_release": "0.16.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.16.0",
+    "commit": "46c650163d2fa75c63bf2150f79d7d3f11c514fa"
+  },
+  "_source": "https://github.com/bitpay/bitcore-lib.git",
+  "_target": "^0.16.0",
+  "_originalSource": "bitcore-lib",
+  "_direct": true
+}
